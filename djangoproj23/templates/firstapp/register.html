@@ -1,0 +1,16 @@
+{% extends 'firstapp/base.html' %}
+{% block body_block %}
+<div class="jumbotron jumbotron-fluid">
+  <form  method="POST" enctype='multipart/form-data'>
+    {%if key3%}
+    <h1>Thankyou for registering</h1>
+    {% else %}
+    <h1>Please Register here!</h1>
+    {{key1.as_p}}
+    {{key2.as_p}}
+    {% csrf_token %}
+    <input type="submit" name="" value="Submit">
+    {% endif %}
+  </form>
+</div>
+{% endblock %}
